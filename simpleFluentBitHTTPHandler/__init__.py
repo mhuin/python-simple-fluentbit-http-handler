@@ -2,12 +2,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
 
-from logging import Handler
+from logging.handlers import HTTPHandler
 
 import requests
 
 
-class SimpleFluentBitHTTPHandler(Handler):
+class SimpleFluentBitHTTPHandler(HTTPHandler):
     def __init__(self, url):
         self.url = url
 
