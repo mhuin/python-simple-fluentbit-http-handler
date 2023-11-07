@@ -17,7 +17,7 @@ class SimpleFluentBitHTTPHandler(logging.Handler):
             'log': self.format(record)
         }
         try:
-            req = requests.get(self.url, json=d)
+            req = requests.post(self.url, json=d)
             req.raise_for_status()
         except requests.HTTPError as e:
             self.handleError(record)
